@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2010-2011, The MiCode Open Source Community (www.micode.net)
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">三山五园自助游</string>
+    <string name="app_widget2x2">便签2x2</string>
+    <string name="app_widget4x4">便签4x4</string>
+    <string name="widget_havenot_content">没有关联内容，点击新建便签。</string>
+    <string name="widget_under_visit_mode">访客模式下，便签内容不可见</string>
+    <string name="notelist_string_info">...</string>
+    <string name="notelist_menu_new">新建便签</string>
+    <string name="format_date_ymd">yyyyMMdd</string>
+    <string name="format_datetime_mdhm">MM月dd日 kk:mm</string>
+    <string name="notealert_ok">知道了</string>
+    <string name="notealert_enter">查看</string>
+    <!-- note list string -->
+    <string name="menu_create_folder">新建文件夹</string>
+    <string name="menu_setting">设置</string>
+    <string name="menu_delete">删除</string>
+    <string name="menu_move">移动到文件夹</string>
+    <string name="menu_select_none">没有选中项，操作无效</string>
+    <string name="menu_font_size">文字大小</string>
+    <string name="menu_font_small">小</string>
+    <string name="menu_font_normal">正常</string>
+    <string name="menu_font_large">大</string>
+    <string name="menu_font_super">超大</string>
+    <string name="menu_list_mode">进入清单模式</string>
+    <string name="menu_normal_mode">退出清单模式</string>
+    <string name="menu_folder_view">查看文件夹</string>
+    <string name="menu_folder_delete">刪除文件夹</string>
+    <string name="menu_folder_change_name">修改文件夹名称</string>
+    <string name="folder_exist">文件夹 %1$s 已存在，请重新命名</string>
+    <string name="menu_title_select_folder">选择文件夹</string>
+    <string name="menu_move_parent_folder">上一级文件夹</string>
+    <string name="info_note_enter_desktop">已添加到桌面</string>
+    <string name="alert_title_delete">删除</string>
+    <string name="alert_message_delete_notes">确认要删除所选的 %d 条便签吗?</string>
+    <string name="alert_message_delete_note">确认要删除该条便签吗?</string>
+    <string name="alert_message_delete_folder">确认删除文件夹及所包含的便签吗？</string>
+    <string name="format_move_notes_to_folder">已将所选 %1$d 条便签移到 %2$s 文件夹</string>
+    <!-- Preferences -->
+    <string name="preferences_title">设置</string>
+    <string name="preferences_bg_random_appear_title">新建便签背景颜色随机</string>
+    <string name="button_delete">删除</string>
+    <string name="call_record_folder_name">通话便签</string>
+    <string name="hint_foler_name">请输入名称</string>
+    <string name="search_setting_description">便签中的文字</string>
+    <string name="search">便签</string>
+    <string name="datetime_dialog_ok">设置</string>
+    <string name="datetime_dialog_cancel">取消</string>
+    <plurals name="search_results_title">
+        <item quantity="other"><xliff:g id="NUMBER">%1$s</xliff:g> 条符合“<xliff:g id="SEARCH">%2$s</xliff:g>”的搜索结果</item>
+    </plurals>
+
+</resources>

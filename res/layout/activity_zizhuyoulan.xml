@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.bin.sanshanwuyuanlvyou.util.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.bin.sanshanwuyuanlvyou.util.TitleLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="1000.0" >
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="999.0"
+                android:clickable="true" />
+
+            <com.baidu.lbsapi.panoramaview.PanoramaView
+                android:id="@+id/panorama"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:background="#00000000"
+                android:clickable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_zizhuyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/customicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="线路规划" />
+
+            <Button
+                android:id="@+id/muni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="模拟" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/RadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ll_zizhuyou"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="setMapMode"
+                android:text="普通图"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/statellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="setMapMode"
+                android:text="卫星图"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/statepanorama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="setMapMode"
+                android:text="全景图"
+                android:textColor="#000000" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="2.89"
+            android:background="#ffffff"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+</LinearLayout>

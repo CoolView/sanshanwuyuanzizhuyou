@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background" >
+
+    <LinearLayout
+        android:id="@+id/myactivity_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:src="@drawable/my_main_im1" />
+
+        <ImageButton
+            android:id="@+id/imb_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/recent" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_zhuye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myactivity_ll"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:src="@drawable/image_zhuye" />
+
+    <GridView
+        android:id="@+id/main_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_zhuye"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_gridview" 
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/main_lvdao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="健身绿道" />
+
+        <Button
+            android:id="@+id/main_gongju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小工具" />
+    </LinearLayout>
+
+</RelativeLayout>

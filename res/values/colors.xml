@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="black_overlay">#66FFFFFF</color>
+    <color name="skyblue">#663299CC</color>
+    <color name="myblue">#663299CC</color>
+    <color name="transparent">#80000000</color>
+    <color name="user_query_highlight">#335b5b5b</color>
+
+</resources>
