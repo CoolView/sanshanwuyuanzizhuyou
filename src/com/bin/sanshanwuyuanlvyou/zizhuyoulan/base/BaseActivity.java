@@ -16,13 +16,13 @@ import com.bin.sanshanwuyuanlvyou.zizhuyoulan.utils.T;
 public abstract class BaseActivity extends FragmentActivity {
 
 	/**
-	 * 灞忓箷鐨勫搴︺�楂樺害銆佸瘑搴�
+	 * 屏幕的宽度、高度、密度
 	 */
 	protected int mScreenWidth;
 	protected int mScreenHeight;
 	protected float mDensity;
 	protected Context mContext;
-	protected String LogName; // 鎵撳嵃鐨勫悕绉�
+	protected String LogName; // 打印的名称
 	protected ImageView titleBack;
 	protected TextView titleName;
 	protected TextView titleRightText;
@@ -58,12 +58,12 @@ public abstract class BaseActivity extends FragmentActivity {
 
 	}
 
-	/** 閫氳繃Class璺宠浆鐣岄潰 **/
+	/** 通过Class跳转界面 **/
 	protected void startActivity(Class<?> cls) {
 		startActivity(cls, null);
 	}
 
-	/** 鍚湁Bundle閫氳繃Class璺宠浆鐣岄潰 **/
+	/** 含有Bundle通过Class跳转界面 **/
 	protected void startActivity(Class<?> cls, Bundle bundle) {
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
@@ -73,12 +73,12 @@ public abstract class BaseActivity extends FragmentActivity {
 		startActivity(intent);
 	}
 
-	/** 閫氳繃Action璺宠浆鐣岄潰 **/
+	/** 通过Action跳转界面 **/
 	protected void startActivity(String action) {
 		startActivity(action, null);
 	}
 
-	/** 鍚湁Bundle閫氳繃Action璺宠浆鐣岄潰 **/
+	/** 含有Bundle通过Action跳转界面 **/
 	protected void startActivity(String action, Bundle bundle) {
 		Intent intent = new Intent();
 		intent.setAction(action);
@@ -89,7 +89,7 @@ public abstract class BaseActivity extends FragmentActivity {
 	}
 
 	// /**
-	// * 鍚愬徃
+	// * 吐司
 	// *
 	// * @param message
 	// */

@@ -5,16 +5,17 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 /**
- * Toast缁熶竴绠＄悊绫� * 
- * @author way
+ * Toast统一管理类
+ * 
+ * @author bin
  * 
  */
-public class T {
+ public class T {
 	// Toast
 	private static Toast toast;
 
 	/**
-	 * 鐭椂闂存樉绀篢oast
+	 * 短时间显示Toast
 	 * 
 	 * @param context
 	 * @param message
@@ -30,7 +31,7 @@ public class T {
 	}
 
 	/**
-	 * 鐭椂闂存樉绀篢oast
+	 * 短时间显示Toast
 	 * 
 	 * @param context
 	 * @param message
@@ -46,7 +47,7 @@ public class T {
 	}
 
 	/**
-	 * 闀挎椂闂存樉绀篢oast
+	 * 长时间显示Toast
 	 * 
 	 * @param context
 	 * @param message
@@ -62,7 +63,7 @@ public class T {
 	}
 
 	/**
-	 * 闀挎椂闂存樉绀篢oast
+	 * 长时间显示Toast
 	 * 
 	 * @param context
 	 * @param message
@@ -78,7 +79,7 @@ public class T {
 	}
 
 	/**
-	 * 鑷畾涔夋樉绀篢oast鏃堕棿
+	 * 自定义显示Toast时间
 	 * 
 	 * @param context
 	 * @param message
@@ -95,7 +96,7 @@ public class T {
 	}
 
 	/**
-	 * 鑷畾涔夋樉绀篢oast鏃堕棿
+	 * 自定义显示Toast时间
 	 * 
 	 * @param context
 	 * @param message

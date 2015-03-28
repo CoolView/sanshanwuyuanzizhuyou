@@ -14,7 +14,7 @@ public class ActiivtyStack {
 		mActivityStack = new Stack<Fragment>();
 	}
 
-	// 閫�嚭鏍堥《Activity
+	// 退出栈顶Activity
 	public void popActivity(Fragment activity) {
 		if (activity != null) {
 			mActivityStack.remove(activity);
@@ -24,20 +24,20 @@ public class ActiivtyStack {
 		}
 	}
 
-	// 鑾峰緱褰撳墠鏍堥《Activity
+	// 获得当前栈顶Activity
 	public Fragment currentActivity() {
 		Fragment activity = mActivityStack.lastElement();
 		// Activity activity = mActivityStack.pop();
 		return activity;
 	}
 
-	// 灏嗗綋鍓岮ctivity鎺ㄥ叆鏍堜腑
+	// 将当前Activity推入栈中
 	public void pushActivity(Fragment activity) {
 		mActivityStack.add(activity);
 		// mActivityStack.push(activity);
 	}
 
-	// 閫�嚭鏍堜腑鎵�湁Activity
+	// 退出栈中所有Activity
 	public void popAllActivityExceptOne(Class<Fragment> cls) {
 		while (true) {
 			Fragment activity = currentActivity();

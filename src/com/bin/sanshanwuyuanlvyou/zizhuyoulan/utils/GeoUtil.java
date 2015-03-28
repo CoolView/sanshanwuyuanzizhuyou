@@ -8,15 +8,15 @@ import com.baidu.mapapi.model.LatLng;
 public class GeoUtil {
 
 	/**
-	 * 鏍规嵁缁忕含搴﹀拰璺濈杩斿洖涓�釜鐭╁舰鑼冨洿
+	 * 根据经纬度和距离返回一个矩形范围
 	 * 
 	 * @param lng
-	 *            缁忓害
+	 *            经度
 	 * @param lat
-	 *            绾害
+	 *             纬度
 	 * @param distance
-	 *            璺濈(鍗曚綅涓虹背)
-	 * @return [lng1,lat1, lng2,lat2] 鐭╁舰鐨勫乏涓嬭(lng1,lat1)鍜屽彸涓婅(lng2,lat2)
+	 *            距离(单位为米)
+	 * @return [lng1,lat1, lng2,lat2] 矩形的左下角(lng1,lat1)和右上角(lng2,lat2)
 	 */
 	public static double[] getRectangle(double lng, double lat, long distance) {
 		float delta = 111000;
@@ -29,7 +29,7 @@ public class GeoUtil {
 			double lat2 = lat + (distance / delta);
 			return new double[] { lng1, lat1, lng2, lat2 };
 		} else {
-			// TODO ZHCH 绛変簬0鏃剁殑璁＄畻鍏紡
+			// TODO ZHCH 等于0时的计算公式
 			double lng1 = lng - distance / delta;
 			double lng2 = lng + distance / delta;
 			double lat1 = lat - (distance / delta);
@@ -39,7 +39,7 @@ public class GeoUtil {
 	}
 
 	/**
-	 * 寰楀埌涓ょ偣闂寸殑璺濈 绫�	 * 
+	 * 得到两点间的距离 米
 	 * @param lat1
 	 * @param lng1
 	 * @param lat2
@@ -61,7 +61,7 @@ public class GeoUtil {
 	}
 
 	/**
-	 * 寰楀埌涓ょ偣闂寸殑璺濈 绫�	 * 
+	 * 得到两点间的距离 米
 	 * @param lat1
 	 * @param lng1
 	 * @param lat2
@@ -90,7 +90,7 @@ public class GeoUtil {
 	}
 
 	/**
-	 * 鍦扮悆鍗婂緞锛�378.137KM
+	 * 地球半径：6378.137KM
 	 */
 	private static double EARTH_RADIUS = 6378.137;
 }

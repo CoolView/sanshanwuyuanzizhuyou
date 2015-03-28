@@ -44,7 +44,7 @@ public class BaseApplication extends Application {
 		if (!mBMapManager.init(new MyGeneralListener())) {
 			Toast.makeText(
 					BaseApplication.getInstance().getApplicationContext(),
-					"BMapManager  鍒濆鍖栭敊璇�", Toast.LENGTH_LONG).show();
+					"BMapManager  初始化错误!", Toast.LENGTH_LONG).show();
 		}
 	}
 

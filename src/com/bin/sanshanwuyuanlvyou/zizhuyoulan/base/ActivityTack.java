@@ -8,8 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 
 /**
- * activity 鏍堢鐞�
- * @author duohuo-jinghao
+ * activity 栈管理
  *
  */
 public class ActivityTack {
@@ -36,7 +35,7 @@ public class ActivityTack {
 	}
 	
 	/**
-	 * 瀹屽叏閫�嚭
+	 * 完全退出
 	 * @param context
 	 */
 	public  void exit(Context context){
@@ -48,7 +47,7 @@ public class ActivityTack {
 	
 	
 	/**
-	 * 鏍规嵁class name鑾峰彇activity
+	 * 根据class name获取activity
 	 * @param name
 	 * @return
 	 */
@@ -74,7 +73,7 @@ public class ActivityTack {
 	}
 	
 	/**
-	 * 寮瑰嚭activity
+	 * 弹出activity
 	 * @param activity
 	 */
 	public void popActivity(Activity activity){
@@ -84,8 +83,7 @@ public class ActivityTack {
 	
 	
 	/**
-	 * 寮瑰嚭activity鍒�
-	 * @param cs
+	 * 弹出activity到 @param cs
 	 */
 	@SuppressWarnings("rawtypes")
 	public void popUntilActivity(Class... cs){
