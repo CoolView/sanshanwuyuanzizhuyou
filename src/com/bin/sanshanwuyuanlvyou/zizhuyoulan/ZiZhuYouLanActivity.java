@@ -271,7 +271,8 @@ PanoramaViewListener, OnGetGeoCoderResultListener{
 			@Override
 			public void onClick(View arg0) {
 				Log.d("zhuzhuzhuzhuz", "点击了模拟");
-				startMuniRun();
+//				T.showShort(mContext, "请点击路线规划，模拟路线");
+					startMuniRun();
 			}
 		});
 	}
@@ -342,12 +343,13 @@ PanoramaViewListener, OnGetGeoCoderResultListener{
 					mPanoView.setPanorama(values[0].longitude,
 							values[0].latitude);
 				} else {
-					try {
-						drawStep(values[0]);
-					} catch (Exception e) {
-						T.showLong(mContext, "请点击路线规划，模拟路线");
-						e.printStackTrace();
-					}
+					
+						try {
+							drawStep(values[0]);
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 				}
 			}
 			@Override
