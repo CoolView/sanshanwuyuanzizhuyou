@@ -84,28 +84,28 @@ public class NotesPreferenceActivity extends PreferenceActivity {
     protected void onResume() {
         super.onResume();
 
-        // need to set sync account automatically if user has added a new
-        // account
-        if (mHasAddedAccount) {
-            Account[] accounts = getGoogleAccounts();
-            if (mOriAccounts != null && accounts.length > mOriAccounts.length) {
-                for (Account accountNew : accounts) {
-                    boolean found = false;
-                    for (Account accountOld : mOriAccounts) {
-                        if (TextUtils.equals(accountOld.name, accountNew.name)) {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found) {
-                        setSyncAccount(accountNew.name);
-                        break;
-                    }
-                }
-            }
-        }
+//        // need to set sync account automatically if user has added a new
+//        // account
+//        if (mHasAddedAccount) {
+//            Account[] accounts = getGoogleAccounts();
+//            if (mOriAccounts != null && accounts.length > mOriAccounts.length) {
+//                for (Account accountNew : accounts) {
+//                    boolean found = false;
+//                    for (Account accountOld : mOriAccounts) {
+//                        if (TextUtils.equals(accountOld.name, accountNew.name)) {
+//                            found = true;
+//                            break;
+//                        }
+//                    }
+//                    if (!found) {
+//                        setSyncAccount(accountNew.name);
+//                        break;
+//                    }
+//                }
+//            }
+//        }
 
-        refreshUI();
+//        refreshUI();
     }
 
     @Override
@@ -135,94 +135,10 @@ public class NotesPreferenceActivity extends PreferenceActivity {
         loadAccountPreference();
     }
 
-    private void showSelectAccountAlertDialog() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-
-
-        dialogBuilder.setPositiveButton(null, null);
-
-        Account[] accounts = getGoogleAccounts();
-        String defAccount = getSyncAccountName(this);
-
-        mOriAccounts = accounts;
-        mHasAddedAccount = false;
-
-        if (accounts.length > 0) {
-            CharSequence[] items = new CharSequence[accounts.length];
-            final CharSequence[] itemMapping = items;
-            int checkedItem = -1;
-            int index = 0;
-            for (Account account : accounts) {
-                if (TextUtils.equals(account.name, defAccount)) {
-                    checkedItem = index;
-                }
-                items[index++] = account.name;
-            }
-            dialogBuilder.setSingleChoiceItems(items, checkedItem,
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            setSyncAccount(itemMapping[which].toString());
-                            dialog.dismiss();
-                            refreshUI();
-                        }
-                    });
-        }
-
-
-        final AlertDialog dialog = dialogBuilder.show();
-    }
-
-
-    private Account[] getGoogleAccounts() {
-        AccountManager accountManager = AccountManager.get(this);
-        return accountManager.getAccountsByType("com.google");
-    }
-
-    private void setSyncAccount(String account) {
-        if (!getSyncAccountName(this).equals(account)) {
-            SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = settings.edit();
-            if (account != null) {
-                editor.putString(PREFERENCE_SYNC_ACCOUNT_NAME, account);
-            } else {
-                editor.putString(PREFERENCE_SYNC_ACCOUNT_NAME, "");
-            }
-            editor.commit();
-
-            // clean up last sync time
-            setLastSyncTime(this, 0);
-
-            // clean up local gtask related info
-            new Thread(new Runnable() {
-                public void run() {
-                    ContentValues values = new ContentValues();
-                    values.put(NoteColumns.GTASK_ID, "");
-                    values.put(NoteColumns.SYNC_ID, 0);
-                    getContentResolver().update(Notes.CONTENT_NOTE_URI, values, null, null);
-                }
-            }).start();
-
-        }
-    }
-
     public static String getSyncAccountName(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME,
                 Context.MODE_PRIVATE);
         return settings.getString(PREFERENCE_SYNC_ACCOUNT_NAME, "");
-    }
-
-    public static void setLastSyncTime(Context context, long time) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME,
-                Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putLong(PREFERENCE_LAST_SYNC_TIME, time);
-        editor.commit();
-    }
-
-    public static long getLastSyncTime(Context context) {
-        SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME,
-                Context.MODE_PRIVATE);
-        return settings.getLong(PREFERENCE_LAST_SYNC_TIME, 0);
     }
 
     private class GTaskReceiver extends BroadcastReceiver {
