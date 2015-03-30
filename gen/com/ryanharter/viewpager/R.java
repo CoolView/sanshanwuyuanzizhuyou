@@ -14,8 +14,8 @@ public final class R {
 		public static final int ic_launcher = 0x7f020026;
 	}
 	public static final class id {
-		public static final int horizontal = 0x7f070000;
-		public static final int vertical = 0x7f070001;
+		public static final int horizontal = 0x7f080006;
+		public static final int vertical = 0x7f080007;
 	}
 	public static final class styleable {
 		public static final int[] ViewPager = { 0x7f010000 };

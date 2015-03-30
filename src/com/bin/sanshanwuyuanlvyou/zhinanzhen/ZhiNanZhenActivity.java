@@ -26,8 +26,11 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+
 import com.bin.sanshanwuyuanlvyou.R;
 import com.bin.sanshanwuyuanlvyou.activity.MyMainActivity;
+import com.google.zxing.client.android.CaptureActivity;
+import com.google.zxing.client.android.Intents;
 
 public class ZhiNanZhenActivity extends Activity {
 
@@ -99,9 +102,43 @@ public class ZhiNanZhenActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+        Button bt_saoYiSao = (Button) findViewById(R.id.bt_saoyisao);
+        bt_saoYiSao.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				callCapture(null);
+			}
+		});
         
     }
+    private static final int REQUEST_CODE = 200;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        if (null != data && requestCode == REQUEST_CODE) {
+            switch (resultCode) {
+                case Activity.RESULT_OK:
+                    data.setClass(this, CaptureResultActivity.class);
+                    startActivity(data);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    private void callCapture(String characterSet) {
+
+        Intent intent = new Intent();
+        intent.setAction(Intents.Scan.ACTION);
+        // intent.putExtra(Intents.Scan.MODE, Intents.Scan.QR_CODE_MODE);
+        intent.putExtra(Intents.Scan.CHARACTER_SET, characterSet);
+        intent.putExtra(Intents.Scan.WIDTH, 800);
+        intent.putExtra(Intents.Scan.HEIGHT, 600);
+        // intent.putExtra(Intents.Scan.PROMPT_MESSAGE, "type your prompt message");
+        intent.setClass(this, CaptureActivity.class);
+        startActivityForResult(intent, REQUEST_CODE);
+    }
     @Override
     protected void onResume() {
         super.onResume();

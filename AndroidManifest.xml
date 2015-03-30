@@ -250,6 +250,14 @@
             android:name="com.bin.sanshanwuyuanlvyou.zhinanzhen.ShouDianTongActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.bin.sanshanwuyuanlvyou.zhinanzhen.CaptureResultActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
     <supports-screens

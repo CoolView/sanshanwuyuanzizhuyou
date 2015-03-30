@@ -107,10 +107,10 @@
                             android:text="Button" />
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/bt_saoyisao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Button" />
+                            android:text="扫一扫" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
