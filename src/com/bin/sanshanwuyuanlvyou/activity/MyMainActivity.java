@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.bin.sanshanwuyuanlvyou.R;
@@ -112,6 +114,28 @@ public class MyMainActivity extends Activity {
 			}
 			
 		}
+	}
+	private long exitTime = 0;
+
+	// 点击两次才能退出程序，防止用户的错误操作
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if (keyCode == KeyEvent.KEYCODE_BACK)
+		{
+			if ((System.currentTimeMillis() - exitTime) > 2000)
+			{
+				Toast.makeText(getApplicationContext(), "再按一次退出程序",
+						Toast.LENGTH_SHORT).show();
+				exitTime = System.currentTimeMillis();
+			} else
+			{
+				finish();
+				System.exit(0);
+			}
+			return true;
+		}
+
+		return super.onKeyDown(keyCode, event);
 	}
 
 }
