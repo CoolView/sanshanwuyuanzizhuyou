@@ -83,29 +83,6 @@ public class NotesPreferenceActivity extends PreferenceActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-//        // need to set sync account automatically if user has added a new
-//        // account
-//        if (mHasAddedAccount) {
-//            Account[] accounts = getGoogleAccounts();
-//            if (mOriAccounts != null && accounts.length > mOriAccounts.length) {
-//                for (Account accountNew : accounts) {
-//                    boolean found = false;
-//                    for (Account accountOld : mOriAccounts) {
-//                        if (TextUtils.equals(accountOld.name, accountNew.name)) {
-//                            found = true;
-//                            break;
-//                        }
-//                    }
-//                    if (!found) {
-//                        setSyncAccount(accountNew.name);
-//                        break;
-//                    }
-//                }
-//            }
-//        }
-
-//        refreshUI();
     }
 
     @Override

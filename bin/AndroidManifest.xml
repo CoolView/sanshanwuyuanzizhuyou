@@ -54,6 +54,13 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="18" />
+    <!-- 摄像头、手电筒 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
 
     <application
         android:name=".zizhuyoulan.base.BaseApplication"
@@ -230,6 +237,10 @@
             android:label="@string/preferences_title"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light" >
+        </activity>
+        <activity android:name="com.bin.sanshanwuyuanlvyou.zhinanzhen.ZhiNanZhenActivity" >
+        </activity>
+        <activity android:name="com.bin.sanshanwuyuanlvyou.zhinanzhen.ShouDianTongActivity" >
         </activity>
     </application>
 

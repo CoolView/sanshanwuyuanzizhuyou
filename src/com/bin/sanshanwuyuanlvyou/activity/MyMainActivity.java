@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.SimpleAdapter;
@@ -17,6 +18,7 @@ import android.widget.SimpleAdapter;
 import com.baidu.mapapi.SDKInitializer;
 import com.bin.sanshanwuyuanlvyou.R;
 import com.bin.sanshanwuyuanlvyou.notes.ui.NotesListActivity;
+import com.bin.sanshanwuyuanlvyou.zhinanzhen.ZhiNanZhenActivity;
 import com.bin.sanshanwuyuanlvyou.zizhuyoulan.ZiZhuYouLanActivity;
 
 public class MyMainActivity extends Activity {
@@ -36,6 +38,18 @@ public class MyMainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				Intent intent = new Intent(MyMainActivity.this,AboutActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		//小工具按钮
+		Button gongJi = (Button)findViewById(R.id.main_gongju);
+		gongJi.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MyMainActivity.this,ZhiNanZhenActivity.class);
 				startActivity(intent);
 			}
 		});
