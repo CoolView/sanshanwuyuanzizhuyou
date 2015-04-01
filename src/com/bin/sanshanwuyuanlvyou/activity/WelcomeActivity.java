@@ -22,6 +22,6 @@ public class WelcomeActivity extends Activity {
 				WelcomeActivity.this.startActivity(localIntent);
 				WelcomeActivity.this.finish();
 			}
-		}, 3000L);
+		}, 2000L);
 	}
 }

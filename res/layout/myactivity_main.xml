@@ -64,6 +64,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="小工具" />
+        <Button
+            android:id="@+id/main_tianqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实时天气" />
     </LinearLayout>
 
 </RelativeLayout>
