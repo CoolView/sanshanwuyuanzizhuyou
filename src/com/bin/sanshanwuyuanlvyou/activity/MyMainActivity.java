@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.baidu.mapapi.SDKInitializer;
 import com.bin.sanshanwuyuanlvyou.R;
 import com.bin.sanshanwuyuanlvyou.notes.ui.NotesListActivity;
+import com.bin.sanshanwuyuanlvyou.weather.WeatherActivity;
 import com.bin.sanshanwuyuanlvyou.zhinanzhen.ZhiNanZhenActivity;
 import com.bin.sanshanwuyuanlvyou.zizhuyoulan.ZiZhuYouLanActivity;
 
@@ -50,8 +51,17 @@ public class MyMainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				Intent intent = new Intent(MyMainActivity.this,ZhiNanZhenActivity.class);
+				startActivity(intent);
+			}
+		});
+		//ÌìÆø
+		Button tianQi = (Button) findViewById(R.id.main_tianqi);
+		tianQi.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(MyMainActivity.this,WeatherActivity.class);
 				startActivity(intent);
 			}
 		});
