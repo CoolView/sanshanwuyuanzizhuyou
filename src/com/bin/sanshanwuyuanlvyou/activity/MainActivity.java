@@ -161,15 +161,7 @@ public class MainActivity extends FragmentActivity implements
 		t4_icon1 = (ImageView) view4.findViewById(R.id.t4_icon1);
 		t4_fixed = (ImageView) view4.findViewById(R.id.t4_fixed);
 		pagers.add(view4);
-//		Button bt_Start = (Button)findViewById(R.id.t4_start);
-//		bt_Start.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0) {
-//				Intent intent = new Intent(MainActivity.this,YuanQuJieShaoActivity.class);
-//				startActivity(intent);
-//			}
-//		});
+
 
 		mAdapter = new VerticalFragementPagerAdapter();
 		mPager.setAdapter(mAdapter);
@@ -177,7 +169,12 @@ public class MainActivity extends FragmentActivity implements
 
 		animal(0);
 	}
-
+@Override
+protected void onStop() {
+	// TODO Auto-generated method stub
+	super.onStop();
+	finish();
+}
 	private class VerticalFragementPagerAdapter extends PagerAdapter {
 
 		@Override
