@@ -9,11 +9,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/btn_bySysCamera"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="拍照" />
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_bySysCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/btn_fenxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/iv_CameraImg"
         android:layout_width="match_parent"

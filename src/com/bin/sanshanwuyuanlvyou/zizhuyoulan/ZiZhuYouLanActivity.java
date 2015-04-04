@@ -114,14 +114,14 @@ PanoramaViewListener, OnGetGeoCoderResultListener{
 			}
 			int juli = (int)min;
 			StringBuffer sb = new StringBuffer(256);
-			sb.append("您所在的位置："+location.getAddrStr());
-			sb.append("当前时间为：");
-			sb.append(location.getTime());
+			sb.append("您所在的位置："+location.getAddrStr()+"\n");
+//			sb.append("当前时间为：");
+//			sb.append(location.getTime());
 			sb.append("定位精度：");
 			int jingdu = (int) location.getRadius();
-			sb.append(jingdu+"米");
-			sb.append("纬度："+location.getLatitude());
-			sb.append("经度："+location.getLongitude());
+			sb.append(jingdu+"米\n");
+//			sb.append("纬度："+location.getLatitude());
+//			sb.append("经度："+location.getLongitude());
 			
 			sb.append("距离您最近的景区为："+minJingQu+""+juli+"米");
 			logMsg(sb.toString());

@@ -3,8 +3,6 @@ package com.bin.sanshanwuyuanlvyou.function;
 /*这个是周边介绍*/
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -28,7 +26,6 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
-import com.baidu.mapapi.search.sug.SuggestionSearchOption;
 import com.bin.sanshanwuyuanlvyou.R;
 
 public class ZhouBianJieShaoActivity extends FragmentActivity implements
@@ -119,18 +116,7 @@ OnGetPoiSearchResultListener, OnGetSuggestionResultListener{
 			overlay.zoomToSpan();
 			return;
 		}
-		if (result.error == SearchResult.ERRORNO.AMBIGUOUS_KEYWORD) {
-
-			// 当输入关键字在本市没有找到，但在其他城市找到时，返回包含该关键字信息的城市列表
-			String strInfo = "在";
-			for (CityInfo cityInfo : result.getSuggestCityList()) {
-				strInfo += cityInfo.city;
-				strInfo += ",";
-			}
-			strInfo += "找到结果";
-			Toast.makeText(ZhouBianJieShaoActivity.this, strInfo, Toast.LENGTH_LONG)
-					.show();
-		}
+		
 	}
 
 	public void onGetPoiDetailResult(PoiDetailResult result) {
