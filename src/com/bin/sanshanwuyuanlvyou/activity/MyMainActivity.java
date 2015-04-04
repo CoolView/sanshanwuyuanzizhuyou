@@ -104,7 +104,7 @@ public class MyMainActivity extends Activity {
 			Intent intent;
 			switch (imageIds[position]) {
 			case R.drawable.main_yuanqujieshao:
-				intent = new Intent(MyMainActivity.this,YuanQuDaoHangActivity.class);
+				intent = new Intent(MyMainActivity.this,YuanQuActivity.class);
 				startActivity(intent);
 				break;
 			case R.drawable.main_zizhuyoulan:

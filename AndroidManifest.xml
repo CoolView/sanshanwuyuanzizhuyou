@@ -263,6 +263,10 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.bin.sanshanwuyuanlvyou.activity.YuanQuActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="cn.sharesdk.framework.ShareSDKUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
