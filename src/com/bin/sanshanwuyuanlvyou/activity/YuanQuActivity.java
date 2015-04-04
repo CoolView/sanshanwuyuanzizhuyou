@@ -269,11 +269,11 @@ public class YuanQuActivity extends Activity {
 			LatLng llYuQuanShan = new LatLng(39.995031,116.251611);
 
 			OverlayOptions ooA = new MarkerOptions().position(llChangChunYuan).icon(bdA)
-					.perspective(false).anchor(0.5f, 0.5f).zIndex(9);
+					.perspective(false).anchor(0.5f, 0.5f).zIndex(7);
 			mMarkerChangChunYuan = (Marker) (mBaiduMap.addOverlay(ooA));
 			
 			OverlayOptions ooB = new MarkerOptions().position(llJingMingYuan).icon(bdB)
-					.perspective(false).anchor(0.5f, 0.5f).zIndex(5);
+					.perspective(false).anchor(0.5f, 0.5f).zIndex(7);
 			mMarkerJingMingYuan = (Marker) (mBaiduMap.addOverlay(ooB));
 			
 			OverlayOptions ooC = new MarkerOptions().position(llJingYiYuan).icon(bdC)
@@ -355,6 +355,15 @@ public class YuanQuActivity extends Activity {
 //			mBaiduMap.setMyLocationEnabled(false);
 			mMapView.onDestroy();
 			mMapView = null;
+			// 回收 bitmap 资源
+			bdA.recycle();
+			bdB.recycle();
+			bdC.recycle();
+			bdD.recycle();
+			bdE.recycle();
+			bdF.recycle();
+			bdG.recycle();
+			bdH.recycle();
 			super.onDestroy();
 		}
 
