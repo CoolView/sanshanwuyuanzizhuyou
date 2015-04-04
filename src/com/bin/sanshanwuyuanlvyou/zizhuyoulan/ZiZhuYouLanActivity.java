@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -277,7 +278,23 @@ PanoramaViewListener, OnGetGeoCoderResultListener{
 		});
 	}
 	
-	
+	/**
+	 * 设置是否显示交通图
+	 * 
+	 * @param view
+	 */
+	public void setTraffic(View view) {
+		mBaiduMap.setTrafficEnabled(((CheckBox) view).isChecked());
+	}
+
+	/**
+	 * 设置是否显示百度热力图
+	 * 
+	 * @param view
+	 */
+	public void setBaiduHeatMap(View view) {
+		mBaiduMap.setBaiduHeatMapEnabled(((CheckBox) view).isChecked());
+	}
 	
 	private void setStartPoint(LatLng latlng) {
 
