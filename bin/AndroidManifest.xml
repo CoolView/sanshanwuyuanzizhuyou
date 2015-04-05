@@ -52,7 +52,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
     <!-- 摄像头、手电筒 -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -239,8 +239,8 @@
             android:name="com.bin.sanshanwuyuanlvyou.notes.ui.NotesPreferenceActivity"
             android:label="@string/preferences_title"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-            
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" >
         </activity>
         <activity
             android:name="com.bin.sanshanwuyuanlvyou.zhinanzhen.ZhiNanZhenActivity"
