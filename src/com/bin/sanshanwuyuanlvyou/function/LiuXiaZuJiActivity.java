@@ -5,12 +5,18 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.xmlpull.v1.XmlSerializer;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
 import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -21,19 +27,17 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.map.ArcOptions;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.bin.sanshanwuyuanlvyou.R;
-import com.bin.sanshanwuyuanlvyou.R.id;
 
 public class LiuXiaZuJiActivity extends Activity {
 	// 定位相关
@@ -52,6 +56,7 @@ public class LiuXiaZuJiActivity extends Activity {
 	Button bt_start_jiluzuji;
 	Button bt_save_jiluzuji;
 	Button bt_stop_jiluzuji;
+	Button bt_yiqian_zuji;
 
 	//
 	double latitude = 4.9E-324;
@@ -60,7 +65,11 @@ public class LiuXiaZuJiActivity extends Activity {
 	LatLng latLng;
 	boolean startJiLu = true;
 	int startCount = 0;
+	List<LatLng> points;
 
+	// 存储
+	private SharedPreferences preferences;
+	int saveCount; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,7 +96,7 @@ public class LiuXiaZuJiActivity extends Activity {
 		mLocClient.start();
 		option.setIsNeedAddress(true);
 		tv_liuXiaZuJi_info = (TextView) findViewById(R.id.tv_liuxiazuji_info);
-		final List<LatLng> points = new ArrayList<LatLng>();
+		points = new ArrayList<LatLng>();
 
 		// 开始记录足迹
 		bt_start_jiluzuji = (Button) findViewById(R.id.bt_start_jiluzuji);
@@ -97,8 +106,10 @@ public class LiuXiaZuJiActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Log.d("mynininin", "点击开始记录足迹");
-
+				startJiLu = true;
 				if (startCount == 0) {
+					Toast.makeText(getApplicationContext(), "开始记录足迹",
+							Toast.LENGTH_SHORT).show();
 					p = new Thread() {
 						int count = 0;
 						LatLng ll = null;
@@ -109,10 +120,10 @@ public class LiuXiaZuJiActivity extends Activity {
 								if (latitude == 4.9E-324) {
 									// 加入Looper.prepare();Looper.loop();解决Can't
 									// create handler inside thread that has not
-									// called Looper.prepare()
+									// called Looper.prepare()，但貌似线程就停了
 									Looper.prepare();
 									Toast.makeText(getApplicationContext(),
-											"等待定位", Toast.LENGTH_SHORT).show();
+											"请检查您的网络", Toast.LENGTH_SHORT).show();
 									Looper.loop();
 									continue;
 								}
@@ -121,11 +132,6 @@ public class LiuXiaZuJiActivity extends Activity {
 									ll = new LatLng(latitude, longitude);
 									points.add(ll);
 									Log.d("mynininin", "第一次记录足迹");
-									Looper.prepare();
-									Toast.makeText(getApplicationContext(),
-											"开始记录足迹", Toast.LENGTH_SHORT)
-											.show();
-									Looper.loop();
 									count++;
 									continue;
 								}
@@ -153,12 +159,12 @@ public class LiuXiaZuJiActivity extends Activity {
 								}
 							}
 						}
-
 					};
 					p.start();
 					startCount++;
-				}else{
-					Toast.makeText(getApplicationContext(), "请不要重复点击", Toast.LENGTH_SHORT).show();
+				} else {
+					Toast.makeText(getApplicationContext(), "请不要重复点击",
+							Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -176,8 +182,7 @@ public class LiuXiaZuJiActivity extends Activity {
 					OverlayOptions ooPolyline = new PolylineOptions().width(10)
 							.color(0xAAFF0000).points(points);
 					mBaiduMap.addOverlay(ooPolyline);
-					// 清除数据
-					points.clear();
+
 					Toast.makeText(getApplicationContext(), "停止记录成功，显示您的足迹",
 							Toast.LENGTH_SHORT).show();
 				} else {
@@ -187,37 +192,88 @@ public class LiuXiaZuJiActivity extends Activity {
 
 			}
 		});
-
+		// 保存记录
 		bt_save_jiluzuji = (Button) findViewById(R.id.bt_save_jiluzuji);
+		bt_save_jiluzuji.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				// 读取SharedPreferences中需要的数据
+				preferences = getSharedPreferences("saveCount", MODE_WORLD_READABLE);
+				saveCount = preferences.getInt("saveCount", 0);
+
+				// 存储次数加一
+				Editor editor = preferences.edit();
+				// 存入数据
+				editor.putInt("saveCount", ++saveCount);
+				// 提交修改
+				editor.commit();
+				/**
+				 * 写xml文件到本地
+				 */
+				writeXmlToLocal();
+				Log.d("yyyyyyyyyyyyyyyyy", "写了写了");
+				Toast.makeText(getApplicationContext(), "保存成功", Toast.LENGTH_SHORT).show();
+			}
+		});
+		//查看以前的足迹
+		bt_yiqian_zuji = (Button) findViewById(R.id.bt_yiqian_zuji);
+		bt_yiqian_zuji.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(LiuXiaZuJiActivity.this,ZuJiLieBiaoActivity.class);
+				startActivity(intent);
+			}
+		});
 
 	}
-
-	public static boolean saveUserInfo(Context context) {
+	private void writeXmlToLocal() {
+		List<LatLng> latLngList = points;
+		
+		// 获得序列化对象
+		XmlSerializer serializer = Xml.newSerializer();
+		
 		try {
-			// 判断当前的手机是否有sd卡
-			String state = Environment.getExternalStorageState();
-			if (!Environment.MEDIA_MOUNTED.equals(state)) {
-				// 已经挂载了sd卡
-				return false;
+			File path = new File(Environment.getExternalStorageDirectory(), "latLng"+saveCount+".xml");
+			FileOutputStream fos = new FileOutputStream(path);
+			
+//			FileOutputStream fos = this.openFileOutput("latLng"+saveCount+".xml", Context.MODE_PRIVATE);
+
+			// 指定序列化对象输出的位置和编码
+			serializer.setOutput(fos, "utf-8");
+			
+			serializer.startDocument("utf-8", true);	// 写开始 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+			
+			serializer.startTag(null, "latLngs");		// <latLngs>
+			
+			for (LatLng latLng : latLngList) {
+				// 开始写人
+
+				serializer.startTag(null, "latLng");	// <latLng>
+				
+				// latitude
+				serializer.startTag(null, "latitude");		// <latitude>
+				serializer.text(String.valueOf(latLng.latitude));
+				serializer.endTag(null, "latitude");		// </latitude>
+				// 写longitude
+				serializer.startTag(null, "longitude");		// <longitude>
+				serializer.text(String.valueOf(latLng.longitude));
+				serializer.endTag(null, "longitude");		// </longitude>
+				
+				serializer.endTag(null, "latLng");	// </latLng>
 			}
-			// 获得SD卡位置
-			File sdCardFile = Environment.getExternalStorageDirectory();
-
-			File file = new File(sdCardFile, "MyLocationInfo.txt");
-			FileOutputStream fos = new FileOutputStream(file, true);
-
-			// String data = mLocationInfo + LINE_SEPARATOR;
-			// fos.write(data.getBytes());
-
-			fos.flush();
-			fos.close();
-			return true;
+			
+			serializer.endTag(null, "latLngs");			// </latLngs>
+			
+			serializer.endDocument();		// 结束
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return false;
-	}
-
+		
+	}		
 	/**
 	 * 定位SDK监听函数
 	 */

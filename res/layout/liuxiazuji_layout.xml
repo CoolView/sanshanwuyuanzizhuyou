@@ -34,7 +34,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/bt_save_jiluzuji"
             
-            android:text="停止记录" />
+            android:text="停止记录并展示" />
 
         <Button
             android:id="@+id/bt_start_jiluzuji"
@@ -54,6 +54,14 @@
             android:background="#ffffff"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/bt_yiqian_zuji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bt_start_jiluzuji"
+            android:layout_below="@+id/bt_start_jiluzuji"
+            android:text="查看之前的记录" />
 
     </RelativeLayout>
 
