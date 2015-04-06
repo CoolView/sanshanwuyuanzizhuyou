@@ -237,10 +237,10 @@ public class LiuXiaZuJiActivity extends Activity {
 		XmlSerializer serializer = Xml.newSerializer();
 		
 		try {
-			File path = new File(Environment.getExternalStorageDirectory(), "latLng"+saveCount+".xml");
-			FileOutputStream fos = new FileOutputStream(path);
+//			File path = new File(Environment.getExternalStorageDirectory(), "latLng"+saveCount+".xml");
+//			FileOutputStream fos = new FileOutputStream(path);
 			
-//			FileOutputStream fos = this.openFileOutput("latLng"+saveCount+".xml", Context.MODE_PRIVATE);
+			FileOutputStream fos = this.openFileOutput("latLng"+saveCount+".xml", Context.MODE_PRIVATE);
 
 			// 指定序列化对象输出的位置和编码
 			serializer.setOutput(fos, "utf-8");

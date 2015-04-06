@@ -46,9 +46,13 @@ public class XianShiZuJiActivity extends Activity {
 
 	private List<LatLng> parserXmlFromLocal() {
 		try {
-			File path = new File(Environment.getExternalStorageDirectory(),
-					"latLng"+(id+1)+".xml");
-			FileInputStream fis = new FileInputStream(path);
+//			File path = new File(Environment.getExternalStorageDirectory(),
+//					"latLng"+(id+1)+".xml");
+//			FileInputStream fis = new FileInputStream(path);
+			
+			File file = new File("/data/data/com.bin.sanshanwuyuanlvyou/files/latLng"+(id+1)+".xml");
+			FileInputStream fis = new FileInputStream(file);
+
 
 			// 获得pull解析器对象
 			XmlPullParser parser = Xml.newPullParser();

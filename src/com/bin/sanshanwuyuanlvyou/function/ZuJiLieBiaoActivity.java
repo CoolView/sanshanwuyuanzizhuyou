@@ -22,8 +22,8 @@ public class ZuJiLieBiaoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_zujiliebiao);
 		// 获取目录下指定文件
-//		File dir = new File("/data/data/com.bin.sanshanwuyuanlvyou/files/");
-		File dir = new File("/mnt/sdcard/");
+		File dir = new File("/data/data/com.bin.sanshanwuyuanlvyou/files/");
+//		File dir = new File("/mnt/sdcard/");
 
 		String[] names = dir.list(new SuffixFilter("latLng"));// 获取目录下含latLng的文件
 		if (names!= null) {
