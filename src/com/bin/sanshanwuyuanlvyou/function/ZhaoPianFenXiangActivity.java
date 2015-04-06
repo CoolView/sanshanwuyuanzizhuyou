@@ -59,7 +59,7 @@ public class ZhaoPianFenXiangActivity extends Activity {
 				intent.addCategory(Intent.CATEGORY_DEFAULT);
 				// 根据文件地址创建文件
 				Date date = new Date(); 
-				DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
+				DateFormat dateFormat = DateFormat.getDateTimeInstance();//getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
 				String dateStr = dateFormat.format(date);
 				FILE_PATH = FILE_PATH + dateStr +".jpg";
 				File file = new File(FILE_PATH);

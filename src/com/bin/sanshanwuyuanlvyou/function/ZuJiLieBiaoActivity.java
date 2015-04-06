@@ -1,6 +1,8 @@
 package com.bin.sanshanwuyuanlvyou.function;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.util.Date;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,10 +28,20 @@ public class ZuJiLieBiaoActivity extends Activity {
 //		File dir = new File("/mnt/sdcard/");
 
 		String[] names = dir.list(new SuffixFilter("latLng"));// 获取目录下含latLng的文件
-		if (names!= null) {
+		String[] times = new String[names.length];
+		File file;//
+		Date date;//文件最后一次修改时间
+		DateFormat dateFormat;
+		for (int i = 0; i < names.length; i++) {
+			file = new File(dir, names[i]);
+			date = new Date(file.lastModified());
+			dateFormat = DateFormat.getDateTimeInstance(); //getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
+			times[i] = dateFormat.format(date);
+		}
+		if (times!= null) {
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 					ZuJiLieBiaoActivity.this,
-					android.R.layout.simple_list_item_1, names);
+					android.R.layout.simple_list_item_1, times);
 			ListView listView = (ListView) findViewById(R.id.list_zuji);
 			listView.setAdapter(adapter);
 			listView.setOnItemClickListener(new OnItemClickListener() {
