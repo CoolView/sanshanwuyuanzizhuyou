@@ -18,7 +18,7 @@ public class AboutActivity extends Activity {
 		titleText.setText("关于");
 		textAbout = (TextView) findViewById(R.id.info);
 		String html="<center><h1>三山五园自助游</h1></center>" +
-				"<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 简单使用，三山五园地区旅游必备！带上它，一起游！" +
+				"<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 简单实用，三山五园地区旅游必备！带上它，一起游！" +
 				"<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实用的园区介绍和游玩线路推荐，" +
 				"全面的周边信息，精确的地图导航，"+
 				"精心打造三山五园地区特色旅游。"+
