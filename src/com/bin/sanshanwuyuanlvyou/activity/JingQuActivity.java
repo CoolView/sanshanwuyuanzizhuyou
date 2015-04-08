@@ -10,6 +10,7 @@ import com.bin.sanshanwuyuanlvyou.function.JingDianJieShaoActivity;
 import com.bin.sanshanwuyuanlvyou.function.LiuXiaZuJiActivity;
 import com.bin.sanshanwuyuanlvyou.function.TuiJianLuXianActivity;
 import com.bin.sanshanwuyuanlvyou.function.ZhaoPianFenXiangActivity;
+import com.bin.sanshanwuyuanlvyou.function.ZhouBianJiaoTongActivity;
 import com.bin.sanshanwuyuanlvyou.function.ZhouBianJieShaoActivity;
 
 
@@ -172,7 +173,7 @@ public class JingQuActivity extends Activity {
 				break;
 			case R.drawable.zhoubianjiaotong:
 				intent = new Intent(getApplicationContext(),
-						ZhouBianJieShaoActivity.class);
+						ZhouBianJiaoTongActivity.class);
 				intent.putExtra("ID", jingQu);
 				startActivity(intent);
 				break;
