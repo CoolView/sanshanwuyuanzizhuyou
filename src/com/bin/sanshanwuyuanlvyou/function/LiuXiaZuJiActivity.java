@@ -81,7 +81,7 @@ public class LiuXiaZuJiActivity extends Activity {
 		// 地图初始化
 		mMapView = (MapView) findViewById(R.id.bmapView);
 		mBaiduMap = mMapView.getMap();
-		// 更改缩放级别为15
+		// 更改缩放级别为17
 		mBaiduMap.setMapStatus(MapStatusUpdateFactory.zoomTo(17));
 
 		mBaiduMap.setMyLocationEnabled(true);
