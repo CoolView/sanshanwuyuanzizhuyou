@@ -371,7 +371,7 @@ public final class R {
         public static final int bt_stop_jiluzuji=0x7f080042;
         public static final int bt_title_back=0x7f080092;
         public static final int bt_title_edit=0x7f080094;
-        public static final int bt_yiqian_zuji=0x7f080045;
+        public static final int bt_yiqian_zuji=0x7f080044;
         public static final int btn_bySysCamera=0x7f0800a2;
         public static final int btn_fenxiang=0x7f0800a3;
         public static final int btn_new_note=0x7f08007a;
@@ -522,7 +522,7 @@ public final class R {
         public static final int tv_gongyuan=0x7f080021;
         public static final int tv_huodonginfo=0x7f080022;
         public static final int tv_jingdianxiangqing=0x7f080027;
-        public static final int tv_liuxiazuji_info=0x7f080044;
+        public static final int tv_liuxiazuji_info=0x7f080045;
         public static final int tv_modified_date=0x7f080057;
         public static final int tv_name=0x7f080075;
         public static final int tv_result=0x7f080009;

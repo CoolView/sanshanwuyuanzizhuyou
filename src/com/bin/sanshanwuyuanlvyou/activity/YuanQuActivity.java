@@ -300,10 +300,6 @@ public class YuanQuActivity extends Activity {
 					.perspective(false).anchor(0.5f, 0.5f).zIndex(7);
 			mMarkerYuQuanShan = (Marker) (mBaiduMap.addOverlay(ooH));
 			
-
-			
-
-			
 		}
 
 		/**

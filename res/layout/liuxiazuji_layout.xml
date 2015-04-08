@@ -44,17 +44,6 @@
             android:layout_below="@+id/bt_stop_jiluzuji"
             android:text="开始记录" />
 
-        <TextView
-            android:id="@+id/tv_liuxiazuji_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="20dp"
-            android:background="#ffffff"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#000000" />
-
         <Button
             android:id="@+id/bt_yiqian_zuji"
             android:layout_width="wrap_content"
@@ -62,6 +51,17 @@
             android:layout_alignLeft="@+id/bt_start_jiluzuji"
             android:layout_below="@+id/bt_start_jiluzuji"
             android:text="查看之前的记录" />
+
+        <TextView
+            android:id="@+id/tv_liuxiazuji_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="28dp"
+            android:background="#ffffff"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000" />
 
     </RelativeLayout>
 
