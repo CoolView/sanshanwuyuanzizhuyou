@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="hello">Hello World!</string>
     <string name="app_name">三山五园自助游</string>
@@ -33,17 +32,15 @@
     <string name="alert_message_delete_notes">Confirm to delete the selected %d notes?</string>
     <string name="alert_message_delete_note">Confirm to delete this note?</string>
     <string name="format_move_notes_to_folder">Have moved selected %1$d notes to %2$s folder</string>
-   
+
     <!-- Preferences -->
     <string name="preferences_title">Settings</string>
     <string name="preferences_last_sync_time_format">yyyy-MM-dd hh:mm:ss</string>
     <string name="preferences_menu_cancel">Cancel</string>
     <string name="preferences_bg_random_appear_title">New note background color random</string>
-
     <string name="button_delete">Delete</string>
     <string name="call_record_folder_name">Call notes</string>
     <string name="hint_foler_name">Input name</string>
-
     <string name="search_label">Searching Notes</string>
     <string name="search_hint">Search notes</string>
     <string name="search_setting_description">Text in your notes</string>
@@ -56,10 +53,28 @@
     <string name="location_south">南纬 %sS</string>
     <string name="location_east">东经 %s</string>
     <string name="location_west">西经 %s</string>
+
     <plurals name="search_results_title">
-         <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> result for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
+        <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> result for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
         <!-- Case of 0 or 2 or more results. -->
         <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> results for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
     </plurals>
-    
+
+    <string name="spin_prompt"> 请选择 </string>
+
+    <string-array name="zhoubian">
+        <item> 美食 </item>
+        <item> 酒店 </item>
+        <item> KTV </item>
+        <item> 电影院 </item>
+        <item> 超市 </item>
+        <item> 网吧 </item>
+        <item> 公交站 </item>
+        <item> 厕所 </item>
+        <item> 银行 </item>
+        <item> 医院 </item>
+        <item> 停车场 </item>
+        <item> 加油站 </item>
+    </string-array>
+
 </resources>

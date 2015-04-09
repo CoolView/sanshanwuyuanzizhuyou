@@ -3,8 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
- <LinearLayout
+    <com.bin.sanshanwuyuanlvyou.util.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.bin.sanshanwuyuanlvyou.util.TitleLayout>
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="50dip"
         android:orientation="horizontal" >
@@ -24,18 +27,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="米内" >
+            android:text="米内    查找" >
         </TextView>
 
-        <AutoCompleteTextView
-            android:id="@+id/searchkey"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/sp_searchkey"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.88"
-            android:text="餐厅" />
-         
-        
-    </LinearLayout>  
+            android:entries="@array/zhoubian"
+            android:prompt="@string/spin_prompt" 
+            />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="50dip"
@@ -62,10 +65,10 @@
             android:text="下一组数据" />
     </LinearLayout>
 
-        <com.baidu.mapapi.map.MapView
-            android:id="@+id/bmapView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:clickable="true" />
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
 
 </LinearLayout>

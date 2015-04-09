@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.lbsapi.BMapManager;
@@ -33,7 +35,6 @@ import com.bin.sanshanwuyuanlvyou.R;
 
 public class ZhouBianJieShaoActivity extends Activity implements
 		OnGetPoiSearchResultListener {
-	/** Called when the activity is first created. */
 	private BMapManager mapManager = null;
 	// 定位相关
 	LocationClient mLocClient;
@@ -45,8 +46,9 @@ public class ZhouBianJieShaoActivity extends Activity implements
 	BaiduMap mBaiduMap;
 	PoiSearch mPoiSearch;
 	LatLng latLng;
-	
+
 	private int load_Index = 0;
+	TextView titleText;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -69,11 +71,11 @@ public class ZhouBianJieShaoActivity extends Activity implements
 		option.setScanSpan(1000);
 		mLocClient.setLocOption(option);
 		mLocClient.start();
-		
 
 		mPoiSearch = PoiSearch.newInstance();
 		mPoiSearch.setOnGetPoiSearchResultListener(this);
-
+		titleText = (TextView) findViewById(R.id.title_text);
+		titleText.setText("周边介绍");
 	}
 
 	/**
@@ -83,17 +85,23 @@ public class ZhouBianJieShaoActivity extends Activity implements
 	 */
 	public void searchButtonProcess(View v) {
 		EditText editCity = (EditText) findViewById(R.id.juli);
-		EditText editSearchKey = (EditText) findViewById(R.id.searchkey);
-		if (latLng != null){
-			mPoiSearch.searchNearby((new PoiNearbySearchOption())
-					.location(latLng)
-					.keyword(editSearchKey.getText().toString())
-					.radius(Integer.parseInt(editCity.getText().toString())).pageNum(load_Index));
-		}else{
-			Toast.makeText(getApplicationContext(), "检查您的网络", Toast.LENGTH_SHORT).show();
-		}
+		Spinner spSearchKey = (Spinner) findViewById(R.id.sp_searchkey);
 		
+		//获得所选择的文本内容
+		TextView tx_spinner = (TextView) spSearchKey.getSelectedView();
+		String str = tx_spinner.getText().toString();
+		if (latLng != null) {
+			mPoiSearch.searchNearby((new PoiNearbySearchOption())
+					.location(latLng).keyword(str)
+					.radius(Integer.parseInt(editCity.getText().toString()))
+					.pageNum(load_Index));
+		} else {
+			Toast.makeText(getApplicationContext(), "检查您的网络",
+					Toast.LENGTH_SHORT).show();
+		}
+
 	}
+
 	public void goToNextPage(View v) {
 		load_Index++;
 		searchButtonProcess(null);
