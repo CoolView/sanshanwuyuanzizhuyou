@@ -9,33 +9,38 @@
         android:layout_height="wrap_content" >
     </com.bin.sanshanwuyuanlvyou.util.TitleLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-        <ImageView
-            android:id="@+id/caitu_gudai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:id="@+id/caitu_xiandai"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone" />
-    </LinearLayout>
+            android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/caitu_shuoming"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+            <ImageView
+                android:id="@+id/caitu_gudai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/caitu_chakan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查看答案" />
+            <ImageView
+                android:id="@+id/caitu_xiandai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/caitu_shuoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/caitu_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看答案" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
