@@ -6,7 +6,6 @@ import android.hardware.Camera.Parameters;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bin.sanshanwuyuanlvyou.R;
@@ -21,7 +20,6 @@ public class ShouDianTongActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		View view = View.inflate(this, R.layout.shoudiantong, null);
 		setContentView(view);
-//		 TextView img_but = (TextView) findViewById(R.id.main_img);
 		final ImageButton im_sdt = (ImageButton) findViewById(R.id.im_sdt);
 		
 		im_sdt.setOnClickListener(new View.OnClickListener() {

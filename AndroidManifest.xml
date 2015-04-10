@@ -61,11 +61,13 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
+    
+     
 
     <application
         android:name=".zizhuyoulan.base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@drawable/t4_image"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Black.NoTitleBar" >
         <meta-data
