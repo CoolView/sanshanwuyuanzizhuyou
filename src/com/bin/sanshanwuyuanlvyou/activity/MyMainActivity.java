@@ -28,6 +28,7 @@ public class MyMainActivity extends Activity {
 		int[] imageIds = new int[]{R.drawable.main_yuanqujieshao,R.drawable.main_zizhuyoulan
 	    		,R.drawable.main_xianluchaxu,R.drawable.main_lvyoujilu
 	    };
+		Intent intent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -35,12 +36,14 @@ public class MyMainActivity extends Activity {
 		SDKInitializer.initialize(getApplicationContext());  
 		setContentView(R.layout.myactivity_main);
 		
+		//¹ØÓÚ
 		ImageButton imBt_Info = (ImageButton) findViewById(R.id.imb_info);
+		imBt_Info.setBackgroundResource(R.drawable.recent);
 		imBt_Info.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(MyMainActivity.this,AboutActivity.class);
+				intent = new Intent(MyMainActivity.this,AboutActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -51,7 +54,7 @@ public class MyMainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(MyMainActivity.this,ZhiNanZhenActivity.class);
+				intent = new Intent(MyMainActivity.this,ZhiNanZhenActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -61,7 +64,18 @@ public class MyMainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(MyMainActivity.this,WeatherActivity.class);
+				intent = new Intent(MyMainActivity.this,WeatherActivity.class);
+				startActivity(intent);
+			}
+		});
+		//½¡¿µÂÌµÀ
+		Button lvDao = (Button) findViewById(R.id.main_lvdao);
+		lvDao.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				intent = new Intent(MyMainActivity.this,LvDaoActivity.class);
 				startActivity(intent);
 			}
 		});
@@ -101,7 +115,7 @@ public class MyMainActivity extends Activity {
 				int position,// The position of the view in the adapter
 				long id// The row id of the item that was clicked
 		) {
-			Intent intent;
+			
 			switch (imageIds[position]) {
 			case R.drawable.main_yuanqujieshao:
 				intent = new Intent(MyMainActivity.this,YuanQuActivity.class);

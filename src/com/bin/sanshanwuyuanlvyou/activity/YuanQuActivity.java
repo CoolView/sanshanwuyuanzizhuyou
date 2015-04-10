@@ -132,7 +132,7 @@ public class YuanQuActivity extends Activity {
 					
 					if (marker == mMarkerChangChunYuan) {
 						button.setText("≥©¥∫‘∞");//∏¸∏ƒŒª÷√
-						imageView.setBackgroundResource(R.drawable.image_changchunyuan);
+						imageView.setBackgroundResource(R.drawable.changchunyuan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -147,7 +147,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					} else if (marker == mMarkerJingMingYuan) {
 						button.setText("æ≤√˜‘∞");
-						imageView.setBackgroundResource(R.drawable.image_jingmingyuan);
+						imageView.setBackgroundResource(R.drawable.jingmingyuan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -162,7 +162,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					} else if (marker == mMarkerJingYiYuan) {
 						button.setText("æ≤“À‘∞");
-						imageView.setBackgroundResource(R.drawable.image_jingyiyuan);
+						imageView.setBackgroundResource(R.drawable.jingyiyuan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 //								
@@ -178,7 +178,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					}else if (marker == mMarkerWanShouShan) {
 						button.setText("ÕÚ Ÿ…Ω");
-						imageView.setBackgroundResource(R.drawable.image_wanshoushan);
+						imageView.setBackgroundResource(R.drawable.wanshoushan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -193,7 +193,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					}else if (marker == mMarkerXiangShan) {
 						button.setText("œ„…Ω");
-						imageView.setBackgroundResource(R.drawable.image_xiangshan);
+						imageView.setBackgroundResource(R.drawable.xiangshan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -208,7 +208,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					}else if (marker == mMarkerYiHeYuan) {
 						button.setText("“√∫Õ‘∞");
-						imageView.setBackgroundResource(R.drawable.image_yiheyuan);
+						imageView.setBackgroundResource(R.drawable.yiheyuan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -223,7 +223,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					}else if (marker == mMarkerYuanMingYuan) {
 						button.setText("‘≤√˜‘∞");
-						imageView.setBackgroundResource(R.drawable.image_yuanmingyuan);
+						imageView.setBackgroundResource(R.drawable.yuanmingyuan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
@@ -238,7 +238,7 @@ public class YuanQuActivity extends Activity {
 						mBaiduMap.showInfoWindow(mInfoWindow);
 					}else if (marker == mMarkerYuQuanShan) {
 						button.setText("”Ò»™…Ω");
-						imageView.setBackgroundResource(R.drawable.image_yuquanshan);
+						imageView.setBackgroundResource(R.drawable.yuquanshan_mark);
 						lLayout.setOnClickListener(new OnClickListener() {
 							public void onClick(View v) {
 								mBaiduMap.hideInfoWindow();
