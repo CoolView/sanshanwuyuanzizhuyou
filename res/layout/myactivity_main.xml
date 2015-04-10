@@ -58,6 +58,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="健身绿道" />
+        <Button
+            android:id="@+id/main_caitu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="猜猜这是哪" />
 
         <Button
             android:id="@+id/main_gongju"

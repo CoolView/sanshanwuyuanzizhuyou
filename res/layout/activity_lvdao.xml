@@ -17,6 +17,14 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:clickable="true" />
+        <Button
+            android:id="@+id/bt_lvdao_myweizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            android:text="我的位置" />
 
     </RelativeLayout>
 </LinearLayout>

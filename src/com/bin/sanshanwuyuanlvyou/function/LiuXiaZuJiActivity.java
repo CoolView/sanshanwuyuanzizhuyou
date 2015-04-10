@@ -57,7 +57,7 @@ public class LiuXiaZuJiActivity extends Activity {
 	Button bt_save_jiluzuji;
 	Button bt_stop_jiluzuji;
 	Button bt_yiqian_zuji;
-
+	TextView titleText;
 	//
 	double latitude = 4.9E-324;
 	double longitude = 4.9E-324;
@@ -76,6 +76,8 @@ public class LiuXiaZuJiActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.liuxiazuji_layout);
 
+		titleText = (TextView) findViewById(R.id.title_text);
+		titleText.setText("留下足迹");
 		mCurrentMode = LocationMode.NORMAL;
 
 		// 地图初始化

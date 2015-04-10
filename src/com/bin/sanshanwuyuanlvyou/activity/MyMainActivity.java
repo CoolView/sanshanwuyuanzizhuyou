@@ -79,6 +79,18 @@ public class MyMainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		//²ÂÍ¼
+		Button caiTu = (Button) findViewById(R.id.main_caitu);
+		caiTu.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				intent = new Intent(MyMainActivity.this,CaiTuActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		
 		GridView gridview = (GridView) findViewById(R.id.main_gridview);  
         
