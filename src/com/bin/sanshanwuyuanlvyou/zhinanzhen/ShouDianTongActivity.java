@@ -51,5 +51,14 @@ public class ShouDianTongActivity extends Activity {
 			}
 		});
 	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		if (isopent){
+			camera.stopPreview(); // πÿµÙ¡¡µ∆
+			camera.release();
+		}
+	}
 
 }
