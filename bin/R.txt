@@ -574,8 +574,8 @@ int string alert_message_delete_note 0x7f090073
 int string alert_message_delete_notes 0x7f090072
 int string alert_title_delete 0x7f090071
 int string app_name 0x7f090000
-int string app_widget2x2 0x7f090089
-int string app_widget4x4 0x7f09008a
+int string app_widget2x2 0x7f09008a
+int string app_widget4x4 0x7f09008b
 int string baidutieba 0x7f09004e
 int string baidutieba_client_inavailable 0x7f090020
 int string bluetooth 0x7f090044
@@ -596,8 +596,8 @@ int string file_path 0x7f09005a
 int string finish 0x7f090004
 int string flickr 0x7f090039
 int string folder_exist 0x7f09006c
-int string format_date_ymd 0x7f09008f
-int string format_datetime_mdhm 0x7f090090
+int string format_date_ymd 0x7f090090
+int string format_datetime_mdhm 0x7f090091
 int string format_folder_files_count 0x7f09005c
 int string format_move_notes_to_folder 0x7f090074
 int string foursquare 0x7f090036
@@ -616,6 +616,7 @@ int string instapaper_email 0x7f090048
 int string instapaper_login 0x7f09004a
 int string instapaper_logining 0x7f09004b
 int string instapaper_pwd 0x7f090049
+int string jingdian_chongyangge 0x7f090088
 int string kaixin 0x7f09002b
 int string kakaostory 0x7f090042
 int string kakaostory_client_inavailable 0x7f09001e
@@ -653,10 +654,10 @@ int string mingdao 0x7f090040
 int string mingdao_share_content 0x7f090054
 int string multi_share 0x7f090008
 int string neteasemicroblog 0x7f090030
-int string notealert_enter 0x7f090092
-int string notealert_ok 0x7f090091
-int string notelist_menu_new 0x7f09008e
-int string notelist_string_info 0x7f09008d
+int string notealert_enter 0x7f090093
+int string notealert_ok 0x7f090092
+int string notelist_menu_new 0x7f09008f
+int string notelist_string_info 0x7f09008e
 int string pinterest 0x7f090038
 int string pinterest_client_inavailable 0x7f090019
 int string pocket 0x7f090046
@@ -693,7 +694,7 @@ int string shortmessage 0x7f09002d
 int string sinaweibo 0x7f090022
 int string sohumicroblog 0x7f09002e
 int string sohusuishenkan 0x7f09002f
-int string spin_prompt 0x7f090088
+int string spin_prompt 0x7f090089
 int string tencentweibo 0x7f090023
 int string tumblr 0x7f09003a
 int string twitter 0x7f090029
@@ -708,8 +709,8 @@ int string weibo_oauth_regiseter 0x7f090013
 int string weibo_upload_content 0x7f090015
 int string whatsapp 0x7f090045
 int string whatsapp_client_inavailable 0x7f09001f
-int string widget_havenot_content 0x7f09008b
-int string widget_under_visit_mode 0x7f09008c
+int string widget_havenot_content 0x7f09008c
+int string widget_under_visit_mode 0x7f09008d
 int string yixin 0x7f09003e
 int string yixin_client_inavailable 0x7f09001b
 int string yixinmoments 0x7f09003f

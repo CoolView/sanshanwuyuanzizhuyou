@@ -32,7 +32,7 @@ public class JingDianXiangQingActivity extends Activity {
 		case 0:
 			switch (ImageId) {
 			case R.drawable.chongyangge:
-				titleText.setText("重阳阁");
+				titleText.setText(R.string.jingdian_chongyangge);
 				tv_jingDianXiangQing
 						.setText("		香炉峰顶的一组建筑，意在九九重阳登高瞩望京城，建于1983年4月，分为上、下两层。");
 				image_jingDianXiangQing

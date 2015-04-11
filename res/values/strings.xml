@@ -53,6 +53,8 @@
     <string name="location_south">南纬 %sS</string>
     <string name="location_east">东经 %s</string>
     <string name="location_west">西经 %s</string>
+    <!-- 景点 -->
+    <string name="jingdian_chongyangge">重阳阁</string>
 
     <plurals name="search_results_title">
         <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> result for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>

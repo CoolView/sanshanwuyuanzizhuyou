@@ -636,8 +636,8 @@ public final class R {
         /**  ##### zxing-lib ##### 
          */
         public static final int app_name=0x7f090000;
-        public static final int app_widget2x2=0x7f090089;
-        public static final int app_widget4x4=0x7f09008a;
+        public static final int app_widget2x2=0x7f09008a;
+        public static final int app_widget4x4=0x7f09008b;
         public static final int baidutieba=0x7f09004e;
         public static final int baidutieba_client_inavailable=0x7f090020;
         public static final int bluetooth=0x7f090044;
@@ -658,8 +658,8 @@ public final class R {
         public static final int finish=0x7f090004;
         public static final int flickr=0x7f090039;
         public static final int folder_exist=0x7f09006c;
-        public static final int format_date_ymd=0x7f09008f;
-        public static final int format_datetime_mdhm=0x7f090090;
+        public static final int format_date_ymd=0x7f090090;
+        public static final int format_datetime_mdhm=0x7f090091;
         /**  notes list string 
          */
         public static final int format_folder_files_count=0x7f09005c;
@@ -680,6 +680,9 @@ public final class R {
         public static final int instapaper_login=0x7f09004a;
         public static final int instapaper_logining=0x7f09004b;
         public static final int instapaper_pwd=0x7f090049;
+        /**  景点 
+         */
+        public static final int jingdian_chongyangge=0x7f090088;
         public static final int kaixin=0x7f09002b;
         public static final int kakaostory=0x7f090042;
         public static final int kakaostory_client_inavailable=0x7f09001e;
@@ -719,10 +722,10 @@ public final class R {
         public static final int mingdao_share_content=0x7f090054;
         public static final int multi_share=0x7f090008;
         public static final int neteasemicroblog=0x7f090030;
-        public static final int notealert_enter=0x7f090092;
-        public static final int notealert_ok=0x7f090091;
-        public static final int notelist_menu_new=0x7f09008e;
-        public static final int notelist_string_info=0x7f09008d;
+        public static final int notealert_enter=0x7f090093;
+        public static final int notealert_ok=0x7f090092;
+        public static final int notelist_menu_new=0x7f09008f;
+        public static final int notelist_string_info=0x7f09008e;
         public static final int pinterest=0x7f090038;
         public static final int pinterest_client_inavailable=0x7f090019;
         public static final int pocket=0x7f090046;
@@ -762,7 +765,7 @@ public final class R {
         public static final int sinaweibo=0x7f090022;
         public static final int sohumicroblog=0x7f09002e;
         public static final int sohusuishenkan=0x7f09002f;
-        public static final int spin_prompt=0x7f090088;
+        public static final int spin_prompt=0x7f090089;
         public static final int tencentweibo=0x7f090023;
         public static final int tumblr=0x7f09003a;
         public static final int twitter=0x7f090029;
@@ -777,8 +780,8 @@ public final class R {
         public static final int weibo_upload_content=0x7f090015;
         public static final int whatsapp=0x7f090045;
         public static final int whatsapp_client_inavailable=0x7f09001f;
-        public static final int widget_havenot_content=0x7f09008b;
-        public static final int widget_under_visit_mode=0x7f09008c;
+        public static final int widget_havenot_content=0x7f09008c;
+        public static final int widget_under_visit_mode=0x7f09008d;
         public static final int yixin=0x7f09003e;
         public static final int yixin_client_inavailable=0x7f09001b;
         public static final int yixinmoments=0x7f09003f;
